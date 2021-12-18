@@ -1,0 +1,21 @@
+.add-book{
+   text-align: center;
+}
+
+table{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th{
+   /* border: 1px solid #dddddd; */
+   border: 1px solid #dddddd;
+   padding: 8px;
+}
+
+td{
+   border-bottom: 1px solid #dddddd;
+   border-left: 1px solid #dddddd;
+   border-right: 1px solid #dddddd;
+}
