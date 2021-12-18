@@ -513,6 +513,57 @@ var itemList = document.querySelector(".items");
 //       }
 //    }
 // }
+// const companies = [
+//    {name: "Company One", category: "Finance", start: 1981, end: 2004},
+//    {name: "Company Two", category: "Retail", start: 1992, end: 2008},
+//    {name: "Company Three", category: "Auto", start: 1999, end: 2007},
+//    {name: "Company Four", category: "Retail", start: 1989, end: 2010},
+//    {name: "Company Five", category: "Technology", start: 2009, end: 2014},
+//    {name: "Company Six", category: "Finance", start: 1987, end: 2010},
+//    {name: "Company Seven", category: "Auto", start: 1986, end: 1996},
+//    {name: "Company Eight", category: "Technology", start: 2011, end: 2016},
+//    {name: "Company Nine", category: "Retail", start: 1981, end: 1989}
+// ];
 
-const x = 23;
-const z = '23';
+// const ages = [33, 11, 22, 44, 55];
+
+// Filter
+// let newAges = ages.filter(function (age) {
+//    return age > 2;
+// });
+
+// let newAges = ages.filter(age => age > 3);
+// console.log(newAges);
+
+// const retailCom = companies.filter(function (retail) {
+//    return retail.category === "Retail";
+// });
+// const retailCom = companies.filter(retail => retail.category === "Retail");
+// console.log(retailCom);
+
+// const eightsCom = companies.filter(eighties => eighties.start >= 1980 && eighties.start < 1990);
+
+// Map
+// Create a new array of companie names
+// const nameCom = companies.map(function (name) {
+//    return name.name;
+// });
+
+// const testMap = companies.map(company => `${company.name} [${company.start}, ${company.end}]`);
+// console.log(testMap);
+// console.log(nameCom);
+
+// const ageMap = ages.map(age => Math.sqrt(age)).map(age => age * 2);
+// console.log(ageMap);
+
+// Sort
+// let count = 0;
+// const sortedAge = ages.sort(function (a, b) {
+//    console.log(a + " " + b);
+//    count++;
+//    if (a < b) return 100;
+//    else if (a > b) return -100;
+//    return 0;
+// });
+// console.log(sortedAge);
+// console.log(count);
