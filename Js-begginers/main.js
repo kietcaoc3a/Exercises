@@ -1,3 +1,4 @@
+"use strict";
 // Logging output
 // // Do not use for debugging. Stops script and only strings
 // alert("Hello world");
@@ -567,3 +568,184 @@ var itemList = document.querySelector(".items");
 // });
 // console.log(sortedAge);
 // console.log(count);
+
+const jonas = {
+   firstName: "Kiet",
+   year: 2000,
+   calcAge: function () {
+      console.log(this.firstName);
+
+      // const self = this;
+      // const isM = function () {
+      //    console.log(self);
+      //    console.log(self.year);
+      //    // console.log(this);
+      //    // console.log(this.year);
+      // }
+      // isM();
+      const arrow = () => {
+         const arrow1 = () => {
+            console.log(this);
+            console.log(this.firstName);
+         }
+         // console.log(this);
+         // console.log(this.firstName);
+         arrow1();
+      }
+      arrow();
+   },
+   lisa: {
+      firsName: "Lisa",
+      year: 3000,
+      arrowFunc: () => {
+         console.log(this);
+         console.log(this.firsName);
+      }
+   }
+};
+// console.log(jonas.lisa);
+
+// console.log(jonas.calcYear());
+// jonas.calcAge();
+// jonas.lisa.arrowFunc();
+
+// const isM = function () {
+//    console.log(this);
+//    console.log(this.year);
+// }
+// isM();
+
+// argument keyword only exists in regular function
+// const add = function (a, b) {
+//    console.log(arguments);
+//    return a + b;
+// };
+
+// console.log(add(1, 2, 3, 4));
+
+// const arrow = (a, b) => {
+//    console.log(arguments);
+//    return a + b;
+// }
+// // errors
+// console.log(arrow(1, 2, 3));
+const restaurant = {
+   name: 'Classico Italiano',
+   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+   change: function (indexX, indexY) {
+      // let x = this.starterMenu[indexX];
+      // let y = this.categories[indexY];
+      // [this.starterMenu[indexX], this.categories[indexY]] = [y, x];
+      // return [this.starterMenu[indexX], this.categories[indexY]];
+      // return [x, y] = [y, x];
+      return [this.starterMenu[indexX], this.categories[indexY]] = [this.categories[indexY], this.starterMenu[indexX]];
+   },
+   openingHours: {
+      thu: {
+         open: 12,
+         close: 22,
+      },
+      fri: {
+         open: 11,
+         close: 23,
+      },
+      sat: {
+         open: 0, // Open 24 hours
+         close: 24,
+      }
+   },
+   openOrder: function ({name1 = "hhhhhhhhhhhhh", age = 0, year = 0}) {
+      console.log(name1, age, year);
+   },
+   orderDelivery: function (obj) {
+      console.log(obj);
+   },
+   orderDelivery123: function ({name: n = 2, age: a = 3, year: y = 299}) {
+      console.log(n, a, y);
+   },
+   log: function (x, y, z) {
+      console.log(`x: ${x}, y: ${y}, z: ${z}`);
+   },
+   addNumbers: function (...newArray) {
+      let sum = 0;
+      newArray.forEach((item) => {
+         sum += item;
+      });
+      return sum;
+   }
+};
+
+// Rest and Spread
+// Array
+// const [p, ...newArray] = ["hes", "kiet", ...restaurant.starterMenu];
+// console.log(p, newArray);
+
+// Objects
+// const {sat, ...weekendDay} = {...restaurant.openingHours};
+// console.log(sat, {...weekendDay});
+
+// const {openingHours: {thu: t = {}, ...objects}} = restaurant;
+// console.log(t, objects);
+
+// console.log(restaurant.addNumbers(1, 2, 3, 2324), restaurant.addNumbers(...[5, 6, 7]));
+
+// Destructor operator
+// Nested object
+// const {thu: thursday} = restaurant.openingHours;
+// const {thu: {open: o = 20000000, close: cl = 388888888}} = restaurant.openingHours;
+// console.log(o, cl);
+
+// restaurant.openOrder({name: "kiet", age: 20, year: 2002});
+// restaurant.orderDelivery({name: "Kiet", age: 20, year: 2002});
+// restaurant.orderDelivery123({name: "Kiet", age: 20, year: 2002});
+
+
+// console.log(restaurant.change(2, 3));
+// console.log(restaurant.starterMenu[2]);
+// const [x, y] = restaurant.change(2, 3);
+// console.log(x, y);
+// console.log(restaurant.starterMenu[2]);
+
+// const {name, categories, openingHours} = restaurant;
+// console.log(name, categories, openingHours);
+// const {thu, fri, sat} = restaurant.openingHours;
+// console.log(thu, fri, sat);
+
+// const {mainMenu: main, locationH, openingHours = []} = restaurant;
+// const {mainMenu: main, locationH = [], openingHours = []} = restaurant;
+// console.log(main, locationH, openingHours);
+
+// Mutating variables
+// let a = 299;
+// let b = 155;
+// const obj = {
+//    a: 234,
+//    b: 3245,
+//    c: 652
+// };
+
+// ({a, b} = obj);
+// console.log(a, b);
+
+// Spread operator (...)
+
+// console.log(...restaurant.categories);
+// restaurant.log(...restaurant.categories);
+// const newArr = ["x", "yxxxx", ...restaurant.starterMenu];
+// console.log(...newArr);
+// console.log({...restaurant});
+
+// Objects
+// const newYYY = restaurant;
+// newYYY.name = "kietjjjjjjjjjjjjjjjjjj";
+// const newObj = {...restaurant, nameXXXX: "keit"};
+// const newXXX = {...restaurant};
+// newXXX.name = "kietkkkkkkkkkkkkkkkkkkk";
+// console.log(newYYY);
+// console.log(restaurant.name);
+// console.log(newXXX);
+// console.log(newObj);
+
